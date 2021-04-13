@@ -12,6 +12,11 @@
     writing-mode: vertical-lr;
     text-orientation: mixed;
     font-size: $contact-link-font-size;
+    transition: transform 0.2s;
+}
+
+.contact-email:hover {
+    transform: translateY(-$default-margin-half);
 }
 
 .line {

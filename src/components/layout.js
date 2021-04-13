@@ -1,36 +1,22 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import * as styles from './layout.module.scss'
+import Header from './header.js'
+import Footer from './footer.js'
+import SocialButtonList from './social-button-list'
+import SocialContact from './social-contact'
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
+export default ({ children }) => (
+    <div className={styles.pageContainer}>
+        <div className={styles.content}>
+            {children}
+        </div>
 
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
+        <div className={styles.sideContainerLeft}>
+            <SocialButtonList className={styles.sideContainerContent} />
+        </div>
 
-  return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+        <div className={styles.sideContainerRight}>
+            <SocialContact />
+        </div>
     </div>
-  )
-}
-
-export default Layout
+)

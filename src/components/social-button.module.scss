@@ -1,0 +1,23 @@
+@import "../styles/variables";
+
+.social-button {
+    width: $social-icon-size;
+    padding: $default-margin-half;
+    transform: translateY(0px);
+    position: relative;
+    transition: all 0.2s;
+    overflow: auto;
+
+    path {
+        fill: $theme-element-unselected-color;
+        transition: fill 0.2s;
+    }
+    
+    &:hover path {
+        fill: $theme-element-selected-color;
+    }
+
+    &:hover {
+        transform: translateY(-$default-margin-half);
+    }
+}

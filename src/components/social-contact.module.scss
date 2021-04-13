@@ -1,0 +1,22 @@
+@import '../styles/variables';
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-email {
+    color: $theme-text-color;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    font-size: $contact-link-font-size;
+}
+
+.line {
+    width: 1px;
+    height: 100px;
+    margin-top: $default-margin-double;
+    background-color: $theme-element-unselected-color;
+}

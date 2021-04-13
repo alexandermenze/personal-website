@@ -1,15 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as styles from "./index.module.css";
+import Layout from '../components/layout'
+import * as styles from '../pages/index.module.scss'
 
 export default () => (
-    <div>
-        <h1 className={styles.test}>This is the index page</h1>
-        <div>
-            <Link to="/">Home</Link> | <Link to="/about">About</Link>
-        </div>
-        <p>
+    <Layout>
+        <p className={styles.test}>
             Lorem ipsum
         </p>
-    </div>
+    </Layout>
 )

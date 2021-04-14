@@ -4,19 +4,51 @@
 .page-container {
     position: relative;
     min-height: 100vh;
-    background-color: $theme-surface-color;
 }
 
 .content {
     padding-bottom: 100px;
     margin:0 auto;
-    max-width: $site-width;
+}
+
+@media only screen and (min-width: 901px) {
+    .content {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .content {
+        max-width: 700px;
+    }
+}
+
+@media only screen and (min-width: 1101px) {
+    .content {
+        max-width: 800px;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .content {
+        max-width: 960px;
+    }
 }
 
 .side-container {
     width: 120px;
     position: fixed;
     margin: auto auto;
+}
+
+@media only screen and (max-width: 900px) {
+    .side-container {
+        display: none;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
 }
 
 .side-container-left {

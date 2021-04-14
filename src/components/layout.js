@@ -4,15 +4,21 @@ import Header from './header.js'
 import Footer from './footer.js'
 import SocialButtonList from './social-button-list'
 import SocialContact from './social-contact'
+import HorizontalSocialButtonList from './horizontal-social-button-list'
 
 export default ({ children }) => (
     <div className={styles.pageContainer}>
         <div className={styles.content}>
-            {children}
+            <div>
+                {children}
+            </div>
+            <div className={styles.socialButtonFooter}>
+                <HorizontalSocialButtonList />
+            </div>
         </div>
 
         <div className={styles.sideContainerLeft}>
-            <SocialButtonList className={styles.sideContainerContent} />
+            <SocialButtonList />
         </div>
 
         <div className={styles.sideContainerRight}>

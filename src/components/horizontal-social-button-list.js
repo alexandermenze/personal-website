@@ -6,8 +6,12 @@ class HorizontalSocialButtonList extends React.Component {
     render() {
         return (
             <div className={styles.list}>
-                <SocialButton social='linkedin' username='test' />
-                <SocialButton social='xing' username='test' />
+                <div className={styles.item}>
+                    <SocialButton social='linkedin' username='test' />
+                </div>
+                <div className={styles.item}>
+                    <SocialButton social='xing' username='test' />
+                </div>
             </div>
         )
     }

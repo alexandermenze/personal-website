@@ -16,7 +16,9 @@
         fill: $theme-element-selected-color;
     }
 
-    &:hover {
-        transform: translateY(-$default-margin-half);
+    @media only screen and (min-width: 901px) {
+        &:hover {
+            transform: translateY(-$default-margin-half);
+        }
     }
 }

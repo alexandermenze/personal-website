@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .contact-email {
@@ -13,6 +12,7 @@
     text-orientation: mixed;
     font-size: $contact-link-font-size;
     transition: transform 0.2s;
+    position: relative;
 }
 
 .contact-email:hover {

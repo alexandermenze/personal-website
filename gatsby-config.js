@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
   siteMetadata: {
     title: 'gatsby-starter-typescript-plus',
@@ -7,9 +5,9 @@ module.exports = {
     keywords: 'gatsbyjs, gatsby, javascript, sample, something',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
     author: {
-      name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com'
+      name: 'Alexander Menze',
+      url: 'alexandermenze.de',
+      email: 'a.menze@outlook.com'
     }
   },
   plugins: [
@@ -39,6 +37,15 @@ module.exports = {
               maxWidth: 1140,
               quality: 90,
               linkImagesToOriginal: false
+            }
+          },
+          {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+              rule: {
+                include: /assets/,
+                omitKeys: ['xmlnsDc', 'xmlnsCc', 'xmlnsRdf', 'xmlnsSvg', 'xmlnsSodipodi', 'xmlnsInkscape']
+              }
             }
           }
         ]

@@ -3,20 +3,12 @@ import styled from '@emotion/styled'
 import { widths, margins, colors } from '../styles/variables'
 import LinkedInIcon from '../assets/linkedin.svg'
 import XingIcon from '../assets/xing.svg'
+import VerticalLine from './VerticalLine'
 
 enum SocialSite {
   LinkedIn,
   Xing
 }
-
-const StyledLine = styled.div`
-  width: 1px;
-  height: 100px;
-  background: black;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: ${margins.default}px;
-`
 
 const StyledSocialButtonList = styled.div`
   position: fixed;
@@ -31,7 +23,7 @@ const StyledSocialButtonList = styled.div`
 const SocialButtonList: React.FC = ({ children }) => (
   <StyledSocialButtonList>
     {children}
-    <StyledLine />
+    <VerticalLine />
   </StyledSocialButtonList>
 )
 

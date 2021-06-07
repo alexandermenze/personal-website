@@ -68,5 +68,6 @@ export const heights = {
 
 export const margins = {
   default: 10,
-  defaultHalf: 5
+  defaultHalf: 5,
+  contentToSideBarMargin: 200
 }

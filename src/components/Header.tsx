@@ -15,6 +15,7 @@ const StyledHeader = styled.header<HeaderStyleProps>`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.brand};

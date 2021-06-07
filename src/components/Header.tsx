@@ -6,11 +6,20 @@ import { Link } from 'gatsby'
 import { heights, dimensions, colors } from '../styles/variables'
 import Container from './Container'
 
-const StyledHeader = styled.header`
+interface HeaderStyleProps {
+  isVisible: boolean
+}
+
+const StyledHeader = styled.header<HeaderStyleProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.brand};
   color: ${transparentize(0.5, colors.white)};
+  opacity: ${(props: HeaderStyleProps) => (props.isVisible ? 1 : 0)};
 `
 
 const HeaderInner = styled(Container)`
@@ -35,12 +44,54 @@ interface HeaderProps {
   title: string
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => (
-  <StyledHeader>
-    <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
-    </HeaderInner>
-  </StyledHeader>
-)
+interface HeaderState {
+  isVisible: boolean
+}
+
+class Header extends React.Component<HeaderProps, HeaderState> {
+  lastScrollTop = 0
+
+  constructor(props: HeaderProps) {
+    super(props)
+    this.state = {
+      isVisible: true
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll.bind(this))
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this))
+  }
+
+  handleScroll() {
+    const st = window.pageYOffset || document.documentElement.scrollTop
+    if (st > this.lastScrollTop) {
+      this.setState({
+        isVisible: false
+      })
+    } else {
+      this.setState({
+        isVisible: true
+      })
+    }
+    this.lastScrollTop = st <= 0 ? 0 : st
+  }
+
+  render() {
+    const { title } = this.props
+    const { isVisible } = this.state
+
+    return (
+      <StyledHeader isVisible={isVisible}>
+        <HeaderInner>
+          <HomepageLink to="/">{title}</HomepageLink>
+        </HeaderInner>
+      </StyledHeader>
+    )
+  }
+}
 
 export default Header

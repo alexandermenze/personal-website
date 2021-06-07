@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 import { SocialButton, SocialButtonList, SocialSite } from './SocialButton'
 import { widths } from '../styles/variables'
+import MailContact from './MailContact'
 
 const StyledMainPage = styled.div`
   margin-left: ${widths.sideBar}px;
@@ -19,6 +20,7 @@ const MainPageComponent: React.FC<MainPageProps> = ({ children, className }) => 
       <SocialButton site={SocialSite.Xing} username="max.mustermann" />
     </SocialButtonList>
     {children}
+    <MailContact mailAddress="kontakt@mustermann.de" />
   </StyledMainPage>
 )
 

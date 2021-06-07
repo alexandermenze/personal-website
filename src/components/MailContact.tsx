@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { widths, margins } from '../styles/variables'
+import { widths, margins, colors } from '../styles/variables'
 import VerticalLine from './VerticalLine'
 
 const StyledMailContact = styled.div`
@@ -13,13 +13,18 @@ const StyledMailContact = styled.div`
   align-items: center;
 `
 
-const StyledMailAdress = styled.p`
+const StyledMailAdress = styled.a`
+  color: ${colors.brand};
+  text-decoration: underline;
+  writing-mode: vertical-rl;
   position: relative;
   margin-top: ${margins.defaultHalf}px;
   margin-bottom: ${margins.defaultHalf}px;
+  margin-left: ${margins.defaultHalf}px;
   transition: all 0.2s;
   &:hover {
     transform: translateY(-${margins.defaultHalf}px);
+    color: ${colors.accent};
   }
 `
 
@@ -29,7 +34,7 @@ interface MailContactProps {
 
 const MailContact: React.FC<MailContactProps> = ({ mailAddress }) => (
   <StyledMailContact>
-    <StyledMailAdress>{mailAddress}</StyledMailAdress>
+    <StyledMailAdress href={`mailto:${mailAddress}`}>{mailAddress}</StyledMailAdress>
     <VerticalLine />
   </StyledMailContact>
 )

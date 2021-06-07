@@ -3,12 +3,23 @@ import styled from '@emotion/styled'
 import { transparentize } from 'polished'
 import { Link } from 'gatsby'
 
+import { keyframes } from '@emotion/core'
 import { heights, dimensions, colors } from '../styles/variables'
 import Container from './Container'
 
 interface HeaderStyleProps {
   isVisible: boolean
 }
+
+const HideKeyframes = keyframes`
+  0%    { transform:translateY(0)    }
+  100%  { transform:translateY(-100%) }
+`
+
+const ShowKeyframes = keyframes`
+  0%   { transform:translateY(-100%) }
+  100% { transform:translateY(0)    }
+`
 
 const StyledHeader = styled.header<HeaderStyleProps>`
   position: fixed;
@@ -20,7 +31,7 @@ const StyledHeader = styled.header<HeaderStyleProps>`
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.brand};
   color: ${transparentize(0.5, colors.white)};
-  opacity: ${(props: HeaderStyleProps) => (props.isVisible ? 1 : 0)};
+  animation: ${(props: HeaderStyleProps) => (props.isVisible ? ShowKeyframes : HideKeyframes)} 0.5s ease 0s forwards;
 `
 
 const HeaderInner = styled(Container)`

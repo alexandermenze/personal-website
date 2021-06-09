@@ -37,6 +37,7 @@ export const breakpoints = {
 }
 
 export const widths = {
+  sm: 500,
   md: 720,
   lg: 960,
   xl: 1140,
@@ -69,6 +70,5 @@ export const heights = {
 export const margins = {
   default: 10,
   defaultHalf: 5,
-  contentToSideBarMargin: 200,
   contentToHeaderMargin: 100
 }

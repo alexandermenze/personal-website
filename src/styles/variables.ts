@@ -72,3 +72,7 @@ export const margins = {
   defaultHalf: 5,
   contentToHeaderMargin: 100
 }
+
+export const cssValues = {
+  actualScreenHeight: `calc(100vh - ${margins.contentToHeaderMargin * 2}px - ${heights.header * 2}px)`
+}

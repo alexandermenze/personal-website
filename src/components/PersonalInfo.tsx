@@ -20,12 +20,15 @@ const Container = styled.div`
 `
 
 const InnerContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: ${breakpoints.lg}px) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   @media (max-width: ${breakpoints.lg}px) {
     flex-wrap: wrap;
@@ -62,6 +65,7 @@ const ProfileImageContainer = styled.div`
   @media (max-width: ${breakpoints.lg}px) {
     margin-right: 50px;
     margin-top: 50px;
+    min-width: none;
   }
 `
 

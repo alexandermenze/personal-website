@@ -16,7 +16,7 @@ const Container = styled.div`
   margin-right: auto;
   width: auto;
   max-width: 100em;
-  height: ${cssValues.actualScreenHeight};
+  height: ${cssValues.firstUsableScreenHeight};
 `
 
 const InnerContainer = styled.div`
@@ -67,10 +67,6 @@ const ProfileImageContainer = styled.div`
     margin-top: 50px;
     min-width: none;
   }
-`
-
-const RoundedCorners = css`
-  border-radius: 25px;
 `
 
 interface PersonalInfoProps {

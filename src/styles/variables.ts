@@ -75,5 +75,6 @@ export const margins = {
 }
 
 export const cssValues = {
-  actualScreenHeight: `calc(100vh - ${margins.contentToHeaderMargin * 2}px - ${heights.header * 2}px)`
+  usableScreenHeight: `calc(100vh - ${margins.contentToHeaderMargin * 2}px)`,
+  firstUsableScreenHeight: `calc(100vh - ${margins.contentToHeaderMargin * 2}px - ${heights.header * 2}px)`
 }

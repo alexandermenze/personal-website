@@ -19,7 +19,7 @@ const StyledContent = styled.div`
   min-height: 200vh;
   margin-left: auto;
   margin-right: auto;
-  margin-top: ${heights.header + margins.contentToHeaderMargin}px;
+  margin-top: ${margins.contentToHeaderMargin}px;
 
   @media (min-width: ${breakpoints.sm}px) {
     max-width: 450px;

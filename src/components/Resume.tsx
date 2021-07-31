@@ -17,8 +17,9 @@ const Container = styled.div`
 const ContentContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: start;
 
   @media (min-width: ${breakpoints.lg}px) {
     top: 50%;
@@ -28,6 +29,10 @@ const ContentContainer = styled.div`
   @media (max-width: ${breakpoints.lg}px) {
     flex-wrap: wrap;
   }
+`
+
+const Heading = styled.h1`
+  margin-bottom: 20px;
 `
 
 export interface ResumeEntry {
@@ -55,9 +60,7 @@ class Resume extends React.Component<ResumeProps> {
     return (
       <Container>
         <ContentContainer>
-          <div>
-            <h1>Lebenslauf</h1>
-          </div>
+          <Heading>Lebenslauf</Heading>
           <div>
             <TabContainer tabs={tabs} />
           </div>

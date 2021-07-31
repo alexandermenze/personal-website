@@ -1,6 +1,8 @@
+/* eslint-disable react/prefer-stateless-function */
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { breakpoints, cssValues, margins } from '../styles/variables'
+import { TabContainer, Tab } from './TabContainer'
 
 const Container = styled.div`
   position: relative;
@@ -39,18 +41,28 @@ interface ResumeProps {
   entries: ResumeEntry[]
 }
 
-const Resume: React.FC<ResumeProps> = ({ entries }) => (
-  <Container>
-    <ContentContainer>
-      <h1>Lebenslauf</h1>
-      <tbody>
-        {entries.map((e, i) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <p key={i}>{e.name}</p>
-        ))}
-      </tbody>
-    </ContentContainer>
-  </Container>
-)
+class Resume extends React.Component<ResumeProps> {
+  render() {
+    const { entries } = this.props
+
+    const tabs: Tab[] = entries.map(e => {
+      return {
+        name: e.name,
+        content: <p>{e.description}</p>
+      }
+    })
+
+    return (
+      <Container>
+        <ContentContainer>
+          <h1>Lebenslauf</h1>
+          <tbody>
+            <TabContainer tabs={tabs} />
+          </tbody>
+        </ContentContainer>
+      </Container>
+    )
+  }
+}
 
 export { Resume }

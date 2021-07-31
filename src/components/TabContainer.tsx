@@ -1,15 +1,24 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 const Container = styled.div`
   position: relative;
 `
 
-const TabTitle = styled.h3<{ selected: boolean }>`
+const PartialHoverBackground = css`
+  :hover {
+    background-color: yellow;
+  }
+`
+
+const TabTitle = styled.button<{ selected: boolean }>`
   position: relative;
   display: inline;
   border: 2px solid #000;
-  background-color: ${p => (p.selected ? `#808080` : `white`)};
+  background-color: ${p => (p.selected ? `#cccccc` : `white`)};
+
+  ${p => (p.selected ? `` : PartialHoverBackground)}
 `
 
 export interface Tab {

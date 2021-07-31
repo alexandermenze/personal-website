@@ -5,10 +5,11 @@ const Container = styled.div`
   position: relative;
 `
 
-const TabTitle = styled.h3`
+const TabTitle = styled.h3<{ selected: boolean }>`
   position: relative;
   display: inline;
   border: 2px solid #000;
+  background-color: ${p => (p.selected ? `#808080` : `white`)};
 `
 
 export interface Tab {
@@ -54,7 +55,7 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
         <div>
           {tabs.map((e, i) => (
             // eslint-disable-next-line react/no-array-index-key
-            <TabTitle onClick={() => this.onTabHeaderClick(i)} key={i}>
+            <TabTitle onClick={() => this.onTabHeaderClick(i)} selected={e === selectedTab} key={i}>
               {e.name}
             </TabTitle>
           ))}

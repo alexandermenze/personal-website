@@ -55,10 +55,12 @@ class Resume extends React.Component<ResumeProps> {
     return (
       <Container>
         <ContentContainer>
-          <h1>Lebenslauf</h1>
-          <tbody>
+          <div>
+            <h1>Lebenslauf</h1>
+          </div>
+          <div>
             <TabContainer tabs={tabs} />
-          </tbody>
+          </div>
         </ContentContainer>
       </Container>
     )

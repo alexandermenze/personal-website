@@ -16,7 +16,9 @@ const ContentContainer = styled.div`
   animation: ${FadeInAnimation} 1s;
 `
 
-const HeaderContainer = styled.div``
+const HeaderContainer = styled.div`
+  margin-bottom: 10px;
+`
 
 const PartialHoverBackground = css`
   :hover {

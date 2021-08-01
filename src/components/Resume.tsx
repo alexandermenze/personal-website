@@ -7,8 +7,6 @@ import { TabContainer, Tab } from './TabContainer'
 const Container = styled.div`
   position: relative;
   top: 0;
-  left: 20px;
-  right: 20px;
 `
 
 const ContentContainer = styled.div`

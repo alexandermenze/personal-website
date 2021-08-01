@@ -18,11 +18,6 @@ const ContentContainer = styled.div`
   justify-content: stretch;
   align-items: start;
 
-  @media (min-width: ${breakpoints.lg}px) {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
   @media (max-width: ${breakpoints.lg}px) {
     flex-wrap: wrap;
   }

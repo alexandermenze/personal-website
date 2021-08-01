@@ -4,6 +4,7 @@ import { breakpoints } from '../styles/variables'
 
 const BreakpointContainer = styled.div`
   position: relative;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 

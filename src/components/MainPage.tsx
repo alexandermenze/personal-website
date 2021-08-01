@@ -21,6 +21,11 @@ const HideIfLessThanMedium = styled.div`
   }
 `
 
+const ChildrenContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 interface MainPageProps {
   className?: string
 }
@@ -33,7 +38,7 @@ const MainPageComponent: React.FC<MainPageProps> = ({ children, className }) => 
         <SocialButton site={SocialSite.Xing} username="max.mustermann" />
       </SocialButtonList>
     </HideIfLessThanMedium>
-    {children}
+    <ChildrenContainer>{children}</ChildrenContainer>
     <HideIfLessThanMedium>
       <MailContact mailAddress="kontakt@mustermann.de" />
     </HideIfLessThanMedium>

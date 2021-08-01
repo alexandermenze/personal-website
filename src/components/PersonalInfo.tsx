@@ -16,11 +16,6 @@ const Container = styled.div`
   margin-right: auto;
   width: auto;
 
-  @media (max-width: ${breakpoints.md}px) {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
   @media (max-width: ${breakpoints.lg}px) {
     margin-top: 30px;
   }

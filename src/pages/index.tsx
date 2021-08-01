@@ -33,7 +33,7 @@ const resumeEntries: ResumeComponent.ResumeEntry[] = [
 ]
 
 const VerticalCenteredContainer = styled.div`
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   display: flex;
@@ -42,8 +42,13 @@ const VerticalCenteredContainer = styled.div`
 
   @media (min-width: ${breakpoints.lg}px) {
     min-height: 100vh;
-    top: 50%;
-    transform: translateY(-50%);
+  }
+`
+
+const SpacerWhenSmall = styled.div`
+  height: 0;
+  @media (max-width: ${breakpoints.lg}px) {
+    height: 100px;
   }
 `
 
@@ -59,6 +64,10 @@ const IndexPage = () => (
           />
         </PageContentContainer>
       </VerticalCenteredContainer>
+      <SpacerWhenSmall />
+      <PageContentContainer>
+        <ResumeComponent.Resume entries={resumeEntries} />
+      </PageContentContainer>
     </MainPageComponent>
   </IndexLayout>
 )

@@ -1,7 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { breakpoints, cssValues, margins } from '../styles/variables'
 import { TabContainer, Tab } from './TabContainer'
 
 const Container = styled.div`
@@ -15,6 +14,10 @@ const ContentContainer = styled.div`
 
 const Heading = styled.h1`
   margin-bottom: 20px;
+`
+
+const TimeFrame = styled.p`
+  font-style: italic;
 `
 
 export interface ResumeEntry {
@@ -37,7 +40,12 @@ class Resume extends React.Component<ResumeProps> {
       return {
         title: e.name,
         subtitle: e.year,
-        content: e.description
+        content: (
+          <div>
+            <TimeFrame>{`${e.timeFrom} — ${e.timeTo}`}</TimeFrame>
+            {e.description}
+          </div>
+        )
       }
     })
 

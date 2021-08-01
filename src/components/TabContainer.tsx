@@ -1,9 +1,18 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { css, SerializedStyles } from '@emotion/core'
+import { css, keyframes, SerializedStyles } from '@emotion/core'
+
+const FadeInAnimation = keyframes`
+  from {opacity: 0;}
+  to {opacity: 1;}
+`
 
 const Container = styled.div`
   position: relative;
+`
+
+const ContentContainer = styled.div`
+  animation: ${FadeInAnimation} 1s;
 `
 
 const PartialHoverBackground = css`
@@ -69,7 +78,7 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
             </TabTitle>
           ))}
         </div>
-        <div>{selectedTab?.content}</div>
+        <ContentContainer key={selectedTab?.name}>{selectedTab?.content}</ContentContainer>
       </Container>
     )
   }

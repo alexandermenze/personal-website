@@ -45,6 +45,7 @@ const SubtitleParagraph = styled.p`
   margin: 0;
   text-align: left;
   font-size: 0.9em;
+  font-style: italic;
 `
 
 export interface Tab {

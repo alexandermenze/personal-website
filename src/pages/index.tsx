@@ -11,21 +11,58 @@ import PageContentContainer from '../components/PageContentContainer'
 const resumeEntries: ResumeComponent.ResumeEntry[] = [
   {
     name: 'Grundschule',
-    description: 'Das kleine Einmaleins gelernt.',
+    description: (
+      <div>
+        <p>
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+          sit amet:
+        </p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consetetur sadipscing elitr</li>
+          <li>Sed diam nonumy ei</li>
+        </ul>
+        <p>Invidunt ut labore et dolore magna aliquyam erat:</p>
+        <ul>
+          <li>eirmod tempor invidunt ut</li>
+          <li>labore et dolore magna ali</li>
+        </ul>
+      </div>
+    ),
     timeFrom: 'August 2006',
     timeTo: 'Juni 2010',
     year: '2006'
   },
   {
     name: 'Gymnasium',
-    description: 'In Latein nie aufgepasst.',
+    description: (
+      <div>
+        <p>Invidunt ut labore et dolore magna aliquyam erat:</p>
+        <ul>
+          <li>eirmod tempor invidunt ut</li>
+          <li>labore et dolore magna ali</li>
+        </ul>
+      </div>
+    ),
     timeFrom: 'August 2010',
     timeTo: 'Mai 2017',
     year: '2010'
   },
   {
     name: 'Ausbildung',
-    description: 'Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei der Polipol Holding GmbH & Co. KG.',
+    description: (
+      <div>
+        <p>
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+          sit amet:
+        </p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consetetur sadipscing elitr</li>
+          <li>Sed diam nonumy ei</li>
+        </ul>
+      </div>
+    ),
     timeFrom: 'Januar 2020',
     timeTo: 'August 2017',
     year: '2020'
@@ -48,7 +85,7 @@ const VerticalCenteredContainer = styled.div`
 const SpacerWhenSmall = styled.div`
   height: 0;
   @media (max-width: ${breakpoints.lg}px) {
-    height: 100px;
+    height: 150px;
   }
 `
 

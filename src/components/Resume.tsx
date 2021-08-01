@@ -6,21 +6,13 @@ import { TabContainer, Tab } from './TabContainer'
 
 const Container = styled.div`
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  width: auto;
+  top: 0;
+  left: 20px;
+  right: 20px;
 `
 
 const ContentContainer = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  align-items: start;
-
-  @media (max-width: ${breakpoints.lg}px) {
-    flex-wrap: wrap;
-  }
 `
 
 const Heading = styled.h1`
@@ -29,7 +21,7 @@ const Heading = styled.h1`
 
 export interface ResumeEntry {
   name: string
-  description: string
+  description: React.ReactNode
   timeFrom: string
   timeTo: string
   year: string
@@ -47,7 +39,7 @@ class Resume extends React.Component<ResumeProps> {
       return {
         title: e.name,
         subtitle: e.year,
-        content: <p>{e.description}</p>
+        content: e.description
       }
     })
 

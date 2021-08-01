@@ -62,7 +62,7 @@ const ProfileImageContainer = styled.div`
   @media (max-width: ${breakpoints.lg}px) {
     margin-right: 50px;
     margin-top: 50px;
-    min-width: none;
+    min-width: unset;
   }
 `
 

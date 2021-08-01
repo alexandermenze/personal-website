@@ -7,6 +7,7 @@ import PersonalInfo from '../components/PersonalInfo'
 import * as ResumeComponent from '../components/Resume'
 import { breakpoints } from '../styles/variables'
 import PageContentContainer from '../components/PageContentContainer'
+import Contact from '../components/Contact'
 
 const resumeEntries: ResumeComponent.ResumeEntry[] = [
   {
@@ -89,6 +90,17 @@ const SpacerWhenSmall = styled.div`
   }
 `
 
+const SpacerWhenBig = styled.div`
+  height: 0;
+  @media (min-width: ${breakpoints.lg}px) {
+    height: 150px;
+  }
+`
+
+const Spacer = styled.div`
+  height: 150px;
+`
+
 const IndexPage = () => (
   <IndexLayout>
     <MainPageComponent>
@@ -105,6 +117,14 @@ const IndexPage = () => (
       <PageContentContainer>
         <ResumeComponent.Resume entries={resumeEntries} />
       </PageContentContainer>
+      <Spacer />
+      <SpacerWhenBig />
+      <PageContentContainer>
+        <Contact usernameLinkedIn="max.mustermann" usernameXing="max.mustermann" email="kontakt@mustermann.de" />
+      </PageContentContainer>
+      <Spacer />
+      <SpacerWhenBig />
+      <SpacerWhenBig />
     </MainPageComponent>
   </IndexLayout>
 )

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { css, keyframes, SerializedStyles } from '@emotion/core'
+import { css, keyframes } from '@emotion/core'
+import { colors } from '../styles/variables'
 
 const FadeInAnimation = keyframes`
   from {opacity: 0;}
@@ -15,23 +16,40 @@ const ContentContainer = styled.div`
   animation: ${FadeInAnimation} 1s;
 `
 
+const HeaderContainer = styled.div``
+
 const PartialHoverBackground = css`
   :hover {
-    background-color: yellow;
+    background-color: ${colors.brandVeryLight};
   }
 `
 
 const TabTitle = styled.button<{ selected: boolean }>`
   position: relative;
   display: inline;
-  border: 2px solid #000;
-  background-color: ${p => (p.selected ? `#cccccc` : `white`)};
+  padding: 8px 5px;
+  border: 0;
+  border-bottom: 2px solid ${p => (p.selected ? colors.brand : colors.black)};
+  background-color: ${p => (p.selected ? colors.brandLight : colors.white)};
+  cursor: pointer;
 
   ${p => (p.selected ? `` : PartialHoverBackground)}
 `
 
+const TitleParagraph = styled.p`
+  margin: 0 0 4px 0;
+  font-size: 1.1em;
+`
+
+const SubtitleParagraph = styled.p`
+  margin: 0;
+  text-align: left;
+  font-size: 0.9em;
+`
+
 export interface Tab {
-  name: string
+  title: string
+  subtitle: string
   content: React.ReactNode
 }
 
@@ -70,15 +88,16 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
 
     return (
       <Container>
-        <div>
+        <HeaderContainer>
           {tabs.map((e, i) => (
             // eslint-disable-next-line react/no-array-index-key
             <TabTitle onClick={() => this.onTabHeaderClick(i)} selected={e === selectedTab} key={i}>
-              {e.name}
+              <TitleParagraph>{e.title}</TitleParagraph>
+              <SubtitleParagraph>{e.subtitle}</SubtitleParagraph>
             </TabTitle>
           ))}
-        </div>
-        <ContentContainer key={selectedTab?.name}>{selectedTab?.content}</ContentContainer>
+        </HeaderContainer>
+        <ContentContainer key={selectedTab?.title}>{selectedTab?.content}</ContentContainer>
       </Container>
     )
   }

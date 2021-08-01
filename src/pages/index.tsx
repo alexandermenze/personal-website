@@ -10,19 +10,22 @@ const resumeEntries: ResumeComponent.ResumeEntry[] = [
     name: 'Grundschule',
     description: 'Das kleine Einmaleins gelernt.',
     timeFrom: 'August 2006',
-    timeTo: 'Juni 2010'
+    timeTo: 'Juni 2010',
+    year: '2006'
   },
   {
     name: 'Gymnasium',
     description: 'In Latein nie aufgepasst.',
     timeFrom: 'August 2010',
-    timeTo: 'Mai 2017'
+    timeTo: 'Mai 2017',
+    year: '2010'
   },
   {
     name: 'Ausbildung',
     description: 'Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei der Polipol Holding GmbH & Co. KG.',
     timeFrom: 'Januar 2020',
-    timeTo: 'August 2017'
+    timeTo: 'August 2017',
+    year: '2020'
   }
 ]
 

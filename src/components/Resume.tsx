@@ -40,6 +40,7 @@ export interface ResumeEntry {
   description: string
   timeFrom: string
   timeTo: string
+  year: string
 }
 
 interface ResumeProps {
@@ -52,7 +53,8 @@ class Resume extends React.Component<ResumeProps> {
 
     const tabs: Tab[] = entries.map(e => {
       return {
-        name: e.name,
+        title: e.name,
+        subtitle: e.year,
         content: <p>{e.description}</p>
       }
     })

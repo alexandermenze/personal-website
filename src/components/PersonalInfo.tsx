@@ -15,8 +15,15 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: auto;
-  max-width: 100em;
-  height: ${cssValues.firstUsableScreenHeight};
+
+  @media (max-width: ${breakpoints.md}px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @media (max-width: ${breakpoints.lg}px) {
+    margin-top: 30px;
+  }
 `
 
 const InnerContainer = styled.div`
@@ -24,11 +31,6 @@ const InnerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (min-width: ${breakpoints.lg}px) {
-    top: 50%;
-    transform: translateY(-50%);
-  }
 
   @media (max-width: ${breakpoints.lg}px) {
     flex-wrap: wrap;

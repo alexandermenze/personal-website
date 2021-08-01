@@ -5,36 +5,13 @@ import { breakpoints, heights, margins, widths } from '../styles/variables'
 import MailContact from './MailContact'
 
 const StyledMainPage = styled.div`
+  overflow: hidden;
   margin-left: ${margins.defaultDouble}px;
   margin-right: ${margins.defaultDouble}px;
 
   @media (min-width: ${breakpoints.md}px) {
     margin-left: ${widths.sideBar}px;
     margin-right: ${widths.sideBar}px;
-  }
-`
-
-const StyledContent = styled.div`
-  position: relative;
-  min-height: 200vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: ${margins.contentToHeaderMargin}px;
-
-  @media (min-width: ${breakpoints.sm}px) {
-    max-width: 450px;
-  }
-
-  @media (min-width: ${breakpoints.md}px) {
-    max-width: 550px;
-  }
-
-  @media (min-width: ${breakpoints.lg}px) {
-    max-width: 730px;
-  }
-
-  @media (min-width: ${breakpoints.xl}px) {
-    max-width: 900px;
   }
 `
 
@@ -56,7 +33,7 @@ const MainPageComponent: React.FC<MainPageProps> = ({ children, className }) => 
         <SocialButton site={SocialSite.Xing} username="max.mustermann" />
       </SocialButtonList>
     </HideIfLessThanMedium>
-    <StyledContent>{children}</StyledContent>
+    {children}
     <HideIfLessThanMedium>
       <MailContact mailAddress="kontakt@mustermann.de" />
     </HideIfLessThanMedium>

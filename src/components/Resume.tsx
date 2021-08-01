@@ -6,12 +6,9 @@ import { TabContainer, Tab } from './TabContainer'
 
 const Container = styled.div`
   position: relative;
-  margin-top: ${margins.contentToHeaderMargin * 2}px;
-  margin-bottom: ${margins.contentToHeaderMargin}px;
   margin-right: auto;
   margin-left: auto;
   width: auto;
-  height: ${cssValues.usableScreenHeight};
 `
 
 const ContentContainer = styled.div`

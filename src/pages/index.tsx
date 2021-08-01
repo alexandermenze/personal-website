@@ -64,8 +64,8 @@ const resumeEntries: ResumeComponent.ResumeEntry[] = [
         </ul>
       </div>
     ),
-    timeFrom: 'Januar 2020',
-    timeTo: 'August 2017',
+    timeFrom: 'August 2017',
+    timeTo: 'Januar 2020',
     year: '2020'
   }
 ]

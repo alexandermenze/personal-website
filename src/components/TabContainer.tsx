@@ -12,8 +12,18 @@ const Container = styled.div`
   position: relative;
 `
 
-const ContentContainer = styled.div`
+const ContentPanel = styled.div`
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+`
+
+const ContentContainer = styled.div<{ visible: boolean }>`
   animation: ${FadeInAnimation} 1s;
+  visibility: ${p => (p.visible ? `visible` : `hidden`)};
+  grid-row-start: 1;
+  grid-column-start: 1;
 `
 
 const HeaderContainer = styled.div`
@@ -100,7 +110,13 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
             </TabTitle>
           ))}
         </HeaderContainer>
-        <ContentContainer key={selectedTab?.title}>{selectedTab?.content}</ContentContainer>
+        <ContentPanel>
+          {tabs.map((e, _) => (
+            <ContentContainer visible={selectedTab === e} key={e.title}>
+              {e.content}
+            </ContentContainer>
+          ))}
+        </ContentPanel>
       </Container>
     )
   }

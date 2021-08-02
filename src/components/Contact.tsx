@@ -24,20 +24,27 @@ const Heading = styled.h1`
 
 const ItemLine = styled.a`
   display: flex;
-  align-items: center;
-  text-align: center;
+  align-items: stretch;
+  margin: 8px 0;
 `
 
 const IconContainer = styled.div`
   height: 25px;
   width: 25px;
+  margin-right: 10px;
+`
+
+const LinkText = styled.p`
+  text-align: center;
 `
 
 const ContactItem: React.FC<ContactItemProps> = ({ linkName, linkAddress, image }) => (
-  <ItemLine href={linkAddress}>
-    <IconContainer>{image}</IconContainer>
-    <p>{linkName}</p>
-  </ItemLine>
+  <a href={linkAddress}>
+    <ItemLine>
+      <IconContainer>{image}</IconContainer>
+      <LinkText>{linkName}</LinkText>
+    </ItemLine>
+  </a>
 )
 
 const Contact: React.FC<ContactProps> = ({ usernameLinkedIn, usernameXing, email }) => (

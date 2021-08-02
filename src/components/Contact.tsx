@@ -27,6 +27,7 @@ const Heading = styled.h1`
 const ContactItemContainer = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 const ItemLine = styled.a<{ topPadding: number }>`

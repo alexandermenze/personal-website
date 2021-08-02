@@ -31,9 +31,11 @@ export default `
   a {
     color: ${colors.brand};
     text-decoration: none;
+    transition: color 0.2s ease;
 
     &:hover,
     &:focus {
+      color: ${colors.accent};
       text-decoration: underline;
     }
   }

@@ -38,6 +38,12 @@ const HeadingContainer = styled.div`
   margin-bottom: 20px;
 `
 
+const ResumeContentContainer = styled.div`
+  padding: 12px;
+  box-shadow: 0 0 12px ${colors.brandLight};
+  background-color: ${colors.brandVeryLight};
+`
+
 export interface ResumeEntry {
   name: string
   description: React.ReactNode
@@ -74,9 +80,9 @@ class Resume extends React.Component<ResumeProps> {
             <Heading>Lebenslauf</Heading>
             <HorizontalLine />
           </HeadingContainer>
-          <div>
+          <ResumeContentContainer>
             <TabContainer tabs={tabs} />
-          </div>
+          </ResumeContentContainer>
         </ContentContainer>
       </Container>
     )

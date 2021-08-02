@@ -19,7 +19,7 @@ export const colors = {
     dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
     copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',
     calm: 'rgba(0, 0, 0, 0.54)',
-    light: 'rgba(0, 0, 0, 0.05)'
+    light: 'rgba(0, 0, 0, 0.1)'
   },
   white: '#fff',
   black: '#000',

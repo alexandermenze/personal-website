@@ -58,6 +58,7 @@ const LongDescriptionText = styled.p`
 const ProfileImageContainer = styled.div`
   min-width: 300px;
   margin-left: 50px;
+  box-shadow: 10px 10px 10px grey;
 
   @media (max-width: ${breakpoints.lg}px) {
     margin-right: 50px;

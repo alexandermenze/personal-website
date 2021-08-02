@@ -14,7 +14,8 @@ interface ContactItemProps {
   linkName: string
   linkAddress: string
   image: React.ReactNode
-  customPadding: number
+  linkPadding: number
+  topPadding: number
 }
 
 const Container = styled.div``
@@ -23,10 +24,16 @@ const Heading = styled.h1`
   margin-bottom: 20px;
 `
 
-const ItemLine = styled.a`
+const ContactItemContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+const ItemLine = styled.a<{ topPadding: number }>`
   display: flex;
   align-items: stretch;
-  margin: 8px 0;
+  margin: 12px;
+  padding-top: ${p => p.topPadding}px;
 `
 
 const IconContainer = styled.div`
@@ -41,11 +48,11 @@ const LinkText = styled.p<{ customPadding: number }>`
   padding-bottom: 0;
 `
 
-const ContactItem: React.FC<ContactItemProps> = ({ linkName, linkAddress, image, customPadding }) => (
+const ContactItem: React.FC<ContactItemProps> = ({ linkName, linkAddress, image, linkPadding, topPadding }) => (
   <a href={linkAddress}>
-    <ItemLine>
+    <ItemLine topPadding={topPadding}>
       <IconContainer>{image}</IconContainer>
-      <LinkText customPadding={customPadding}>{linkName}</LinkText>
+      <LinkText customPadding={linkPadding}>{linkName}</LinkText>
     </ItemLine>
   </a>
 )
@@ -53,14 +60,17 @@ const ContactItem: React.FC<ContactItemProps> = ({ linkName, linkAddress, image,
 const Contact: React.FC<ContactProps> = ({ usernameLinkedIn, usernameXing, email }) => (
   <Container>
     <Heading>Kontakt</Heading>
-    <ContactItem
-      linkName="LinkedIn"
-      linkAddress={`https://linkedin.com/in/${usernameLinkedIn}`}
-      image={<LinkedInIcon />}
-      customPadding={5}
-    />
-    <ContactItem linkName="Xing" linkAddress={`https://xing.com/${usernameXing}`} image={<XingIcon />} customPadding={5} />
-    <ContactItem linkName="E-Mail" linkAddress={`mailto:${email}`} image={<MailIcon />} customPadding={0} />
+    <ContactItemContainer>
+      <ContactItem
+        linkName="LinkedIn"
+        linkAddress={`https://linkedin.com/in/${usernameLinkedIn}`}
+        image={<LinkedInIcon />}
+        linkPadding={5}
+        topPadding={0}
+      />
+      <ContactItem linkName="Xing" linkAddress={`https://xing.com/${usernameXing}`} image={<XingIcon />} linkPadding={5} topPadding={0} />
+      <ContactItem linkName="E-Mail" linkAddress={`mailto:${email}`} image={<MailIcon />} linkPadding={0} topPadding={5} />
+    </ContactItemContainer>
   </Container>
 )
 

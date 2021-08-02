@@ -93,12 +93,12 @@ const SpacerWhenSmall = styled.div`
 const SpacerWhenBig = styled.div`
   height: 0;
   @media (min-width: ${breakpoints.lg}px) {
-    height: 150px;
+    height: 80px;
   }
 `
 
 const Spacer = styled.div`
-  height: 150px;
+  height: 80px;
 `
 
 const IndexPage = () => (

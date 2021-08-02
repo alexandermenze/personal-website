@@ -5,7 +5,7 @@ import { breakpoints } from '../styles/variables'
 const BreakpointContainer = styled.div`
   position: relative;
   display: block;
-  margin: 0 auto;
+  margin: 0;
 
   @media (min-width: ${breakpoints.sm}px) {
     max-width: 450px;
@@ -25,6 +25,7 @@ const BreakpointContainer = styled.div`
   @media (min-width: ${breakpoints.xl}px) {
     max-width: 900px;
     width: 900px;
+    margin: 0 auto;
   }
 `
 

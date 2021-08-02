@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import LinkedInIcon from '../assets/linkedin.svg'
 import XingIcon from '../assets/xing.svg'
 import MailIcon from '../assets/envelope-solid.svg'
+import { breakpoints, colors } from '../styles/variables'
 
 interface ContactProps {
   usernameLinkedIn: string
@@ -21,8 +22,15 @@ interface ContactItemProps {
 const Container = styled.div``
 
 const Heading = styled.h1`
-  margin-bottom: 20px;
+  margin: 0 50px;
   text-align: center;
+`
+
+const HeadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 `
 
 const ContactItemContainer = styled.div`
@@ -50,6 +58,17 @@ const LinkText = styled.p<{ customPadding: number }>`
   padding-bottom: 0;
 `
 
+const HorizontalLine = styled.div`
+  height: 2px;
+  width: 200px;
+  display: inline;
+  background-color: ${colors.brand};
+
+  @media (max-width: ${breakpoints.xl}px) {
+    display: none;
+  }
+`
+
 const ContactItem: React.FC<ContactItemProps> = ({ linkName, linkAddress, image, linkPadding, topPadding }) => (
   <a href={linkAddress}>
     <ItemLine topPadding={topPadding}>
@@ -61,7 +80,11 @@ const ContactItem: React.FC<ContactItemProps> = ({ linkName, linkAddress, image,
 
 const Contact: React.FC<ContactProps> = ({ usernameLinkedIn, usernameXing, email }) => (
   <Container>
-    <Heading>Kontakt</Heading>
+    <HeadingContainer>
+      <HorizontalLine />
+      <Heading>Kontakt</Heading>
+      <HorizontalLine />
+    </HeadingContainer>
     <ContactItemContainer>
       <ContactItem
         linkName="LinkedIn"

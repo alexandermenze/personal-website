@@ -2,6 +2,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { TabContainer, Tab } from './TabContainer'
+import { breakpoints, colors } from '../styles/variables'
 
 const Container = styled.div`
   position: relative;
@@ -12,12 +13,29 @@ const ContentContainer = styled.div`
   position: relative;
 `
 
-const Heading = styled.h1`
-  margin-bottom: 20px;
-`
+const Heading = styled.h1``
 
 const TimeFrame = styled.p`
   font-style: italic;
+`
+
+const HorizontalLine = styled.div`
+  height: 2px;
+  width: 200px;
+  margin-left: 50px;
+  display: inline;
+  background-color: ${colors.brand};
+
+  @media (max-width: ${breakpoints.xl}px) {
+    display: none;
+  }
+`
+
+const HeadingContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
 `
 
 export interface ResumeEntry {
@@ -52,7 +70,10 @@ class Resume extends React.Component<ResumeProps> {
     return (
       <Container>
         <ContentContainer>
-          <Heading>Lebenslauf</Heading>
+          <HeadingContainer>
+            <Heading>Lebenslauf</Heading>
+            <HorizontalLine />
+          </HeadingContainer>
           <div>
             <TabContainer tabs={tabs} />
           </div>

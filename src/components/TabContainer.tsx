@@ -4,8 +4,13 @@ import { css, keyframes } from '@emotion/core'
 import { colors } from '../styles/variables'
 
 const FadeInAnimation = keyframes`
-  from {opacity: 0;}
-  to {opacity: 1;}
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+`
+
+const InstantlyOutAnimation = keyframes`
+  0%   { opacity: 0; }
+  100% { opacity: 0; }
 `
 
 const Container = styled.div`
@@ -20,8 +25,8 @@ const ContentPanel = styled.div`
 `
 
 const ContentContainer = styled.div<{ visible: boolean }>`
-  animation: ${FadeInAnimation} 1s;
-  visibility: ${p => (p.visible ? `visible` : `hidden`)};
+  animation: ${p => (p.visible ? FadeInAnimation : InstantlyOutAnimation)} 1s;
+  opacity: ${p => (p.visible ? 1 : 0)};
   grid-row-start: 1;
   grid-column-start: 1;
 `

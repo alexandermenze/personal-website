@@ -24,6 +24,7 @@ const Heading = styled.h1`
 
 const ItemLine = styled.a`
   display: flex;
+  justify-content: center;
 `
 
 const IconContainer = styled.div`

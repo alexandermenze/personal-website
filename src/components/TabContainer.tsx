@@ -47,7 +47,7 @@ const TabTitle = styled.button<{ selected: boolean }>`
   padding: 8px 5px;
   border: 0;
   border-bottom: 2px solid ${p => (p.selected ? colors.brand : colors.black)};
-  background-color: ${p => (p.selected ? colors.brandLight : colors.white)};
+  background-color: ${p => (p.selected ? colors.brandLight : colors.transparent)};
   cursor: pointer;
 
   ${p => (p.selected ? `` : PartialHoverBackground)}

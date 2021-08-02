@@ -105,7 +105,7 @@ const IndexPage = () => (
   <IndexLayout>
     <MainPageComponent>
       <VerticalCenteredContainer>
-        <PageContentContainer>
+        <PageContentContainer isCentered>
           <PersonalInfo
             name="Max Mustermann"
             shortDescription="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy"
@@ -114,12 +114,12 @@ const IndexPage = () => (
         </PageContentContainer>
       </VerticalCenteredContainer>
       <SpacerWhenSmall />
-      <PageContentContainer>
+      <PageContentContainer isCentered>
         <ResumeComponent.Resume entries={resumeEntries} />
       </PageContentContainer>
       <Spacer />
       <SpacerWhenBig />
-      <PageContentContainer>
+      <PageContentContainer isCentered={false}>
         <Contact usernameLinkedIn="max.mustermann" usernameXing="max.mustermann" email="kontakt@mustermann.de" />
       </PageContentContainer>
       <Spacer />

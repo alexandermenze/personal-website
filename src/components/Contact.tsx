@@ -22,6 +22,7 @@ const Container = styled.div``
 
 const Heading = styled.h1`
   margin-bottom: 20px;
+  text-align: center;
 `
 
 const ContactItemContainer = styled.div`
@@ -33,7 +34,7 @@ const ContactItemContainer = styled.div`
 const ItemLine = styled.a<{ topPadding: number }>`
   display: flex;
   align-items: stretch;
-  margin: 12px;
+  margin: 12px 20px;
   padding-top: ${p => p.topPadding}px;
 `
 

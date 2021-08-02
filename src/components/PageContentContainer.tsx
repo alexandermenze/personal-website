@@ -2,10 +2,10 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 import { breakpoints } from '../styles/variables'
 
-const BreakpointContainer = styled.div`
+const BreakpointContainer = styled.div<{ isCentered: boolean }>`
   position: relative;
   display: block;
-  margin: 0;
+  ${p => (p.isCentered ? `margin: 0;` : `margin: 0 auto;`)}
 
   @media (min-width: ${breakpoints.sm}px) {
     max-width: 450px;
@@ -25,10 +25,16 @@ const BreakpointContainer = styled.div`
   @media (min-width: ${breakpoints.xl}px) {
     max-width: 900px;
     width: 900px;
-    margin: 0 auto;
+    ${p => (p.isCentered ? `margin: 0 auto;` : ``)}
   }
 `
 
-const PageContentContainer: React.FC = ({ children }) => <BreakpointContainer>{children}</BreakpointContainer>
+interface PageContentContainerProps {
+  isCentered: boolean
+}
+
+const PageContentContainer: React.FC<PageContentContainerProps> = ({ children, isCentered }) => (
+  <BreakpointContainer isCentered={isCentered}>{children}</BreakpointContainer>
+)
 
 export default PageContentContainer

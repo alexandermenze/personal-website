@@ -39,7 +39,7 @@ const ContactItemContainer = styled.div`
   flex-wrap: wrap;
 `
 
-const ItemLine = styled.a<{ topPadding: number }>`
+const ItemLine = styled.div<{ topPadding: number }>`
   display: flex;
   align-items: stretch;
   margin: 12px 20px;
@@ -87,7 +87,6 @@ const Contact: React.FC<ContactProps> = ({ usernameLinkedIn, usernameXing, email
     </HeadingContainer>
     <ContactItemContainer>
       <ContactItem
-        key="item01_linkedin"
         linkName={`${usernameLinkedIn}`}
         linkAddress={`https://linkedin.com/in/${usernameLinkedIn}`}
         image={<LinkedInIcon />}
@@ -95,21 +94,13 @@ const Contact: React.FC<ContactProps> = ({ usernameLinkedIn, usernameXing, email
         topPadding={0}
       />
       <ContactItem
-        key="item02_xing"
         linkName={`${usernameXing}`}
         linkAddress={`https://xing.com/${usernameXing}`}
         image={<XingIcon />}
         linkPadding={5}
         topPadding={0}
       />
-      <ContactItem
-        key="item03_email"
-        linkName={`${email}`}
-        linkAddress={`mailto:${email}`}
-        image={<MailIcon />}
-        linkPadding={0}
-        topPadding={5}
-      />
+      <ContactItem linkName={`${email}`} linkAddress={`mailto:${email}`} image={<MailIcon />} linkPadding={0} topPadding={5} />
     </ContactItemContainer>
   </Container>
 )

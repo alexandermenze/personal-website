@@ -2,7 +2,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { TabContainer, Tab } from './TabContainer'
-import { breakpoints, colors } from '../styles/variables'
+import { breakpoints, colors, fonts } from '../styles/variables'
 
 const Container = styled.div`
   position: relative;
@@ -16,7 +16,7 @@ const ContentContainer = styled.div`
 const Heading = styled.h1``
 
 const TimeFrame = styled.p`
-  font-style: italic;
+  font-family: ${fonts.monospace};
 `
 
 const HorizontalLine = styled.div`

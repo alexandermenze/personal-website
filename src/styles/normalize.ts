@@ -2,6 +2,9 @@ import { dimensions, fonts, colors, breakpoints } from './variables'
 import { getEmSize } from './mixins'
 
 export default `
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  @import url('https://fonts.googleapis.com/css?family=Merriweather');
+
   html {
     box-sizing: border-box;
   }
@@ -97,6 +100,7 @@ export default `
   h1 {
     margin-top: 0;
     font-size: ${dimensions.headingSizes.h1}rem;
+    font-family: ${fonts.merriweather};
   }
 
   h2 {

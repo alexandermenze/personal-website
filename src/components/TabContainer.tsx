@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { css, keyframes } from '@emotion/core'
-import { colors } from '../styles/variables'
+import { colors, fonts } from '../styles/variables'
 
 const FadeInAnimation = keyframes`
   0%   { opacity: 0; }
@@ -71,7 +71,7 @@ const SubtitleParagraph = styled.p`
   margin-bottom: 4px;
   text-align: left;
   font-size: 0.9em;
-  font-style: italic;
+  font-family: ${fonts.monospace};
 `
 
 export interface Tab {

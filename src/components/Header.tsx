@@ -14,8 +14,9 @@ const StyledHeader = styled.header`
   right: 0;
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
-  background-color: ${colors.brand.default};
-  color: ${transparentize(0.5, colors.white)};
+  background-color: ${colors.white};
+  color: ${colors.black};
+  box-shadow: 0 0 15px ${colors.gray.light};
 `
 
 const HeaderInner = styled(Container)`
@@ -26,7 +27,7 @@ const HeaderInner = styled(Container)`
 `
 
 const HomepageLink = styled(Link)`
-  color: ${colors.white};
+  color: ${colors.black};
   font-size: 1.5rem;
   font-weight: 600;
 

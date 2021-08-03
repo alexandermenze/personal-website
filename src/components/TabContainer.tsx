@@ -32,25 +32,32 @@ const ContentContainer = styled.div<{ visible: boolean }>`
 `
 
 const HeaderContainer = styled.div`
-  margin-bottom: 10px;
-`
-
-const PartialHoverBackground = css`
-  :hover {
-    background-color: ${colors.brand.veryLight};
-  }
+  margin-bottom: 16px;
 `
 
 const TabTitle = styled.button<{ selected: boolean }>`
   position: relative;
   display: inline;
-  padding: 8px 5px;
+  padding: 8px 12px;
   border: 0;
-  border-bottom: 2px solid ${p => (p.selected ? colors.brand.default : colors.black)};
-  background-color: ${p => (p.selected ? colors.brand.light : colors.transparent)};
+  color: ${p => (p.selected ? colors.brand.default : colors.black)};
+  background-color: ${colors.transparent};
   cursor: pointer;
 
-  ${p => (p.selected ? `` : PartialHoverBackground)}
+  &:before {
+    content: '';
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    height: 1px;
+    width: 50%;
+    border-bottom: 2px solid ${p => (p.selected ? colors.brand.default : colors.transparent)};
+  }
+
+  :hover {
+    background-color: ${colors.brand.veryLight};
+    border-radius: 0.4rem;
+  }
 `
 
 const TitleParagraph = styled.p`
@@ -60,6 +67,7 @@ const TitleParagraph = styled.p`
 
 const SubtitleParagraph = styled.p`
   margin: 0;
+  margin-bottom: 4px;
   text-align: left;
   font-size: 0.9em;
   font-style: italic;

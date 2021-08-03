@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { transparentize } from 'polished'
 import { Link } from 'gatsby'
 
 import { heights, dimensions, colors } from '../styles/variables'
@@ -16,7 +15,7 @@ const StyledHeader = styled.header`
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.white};
   color: ${colors.black};
-  box-shadow: 0 0 15px ${colors.gray.light};
+  box-shadow: 0 0 12px ${colors.gray.light};
 `
 
 const HeaderInner = styled(Container)`

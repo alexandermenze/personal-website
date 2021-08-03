@@ -93,13 +93,6 @@ const Contact: React.FC<ContactProps> = ({ usernameLinkedIn, usernameXing, email
         linkPadding={5}
         topPadding={0}
       />
-      <ContactItem
-        linkName={`${usernameXing}`}
-        linkAddress={`https://xing.com/${usernameXing}`}
-        image={<XingIcon />}
-        linkPadding={5}
-        topPadding={0}
-      />
       <ContactItem linkName={`${email}`} linkAddress={`mailto:${email}`} image={<MailIcon />} linkPadding={0} topPadding={5} />
     </ContactItemContainer>
   </Container>

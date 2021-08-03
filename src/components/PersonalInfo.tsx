@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 import { css, keyframes } from '@emotion/core'
 import { StaticImage } from 'gatsby-plugin-image'
-import { breakpoints, cssValues } from '../styles/variables'
+import { breakpoints, colors, cssValues } from '../styles/variables'
 
 const opacityAnimation = keyframes`
   0%   { opacity: 0; }
@@ -58,12 +58,17 @@ const LongDescriptionText = styled.p`
 const ProfileImageContainer = styled.div`
   min-width: 300px;
   margin-left: 50px;
-  box-shadow: 10px 10px 10px grey;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px ${colors.gray.light};
 
   @media (max-width: ${breakpoints.lg}px) {
     margin-right: 50px;
     margin-top: 50px;
     min-width: unset;
+  }
+
+  > div {
+    border-radius: 0.4rem;
   }
 `
 

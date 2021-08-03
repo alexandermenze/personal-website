@@ -60,7 +60,7 @@ const StyledSocialButton = styled.a`
   }
 
   path {
-    fill: ${colors.brand};
+    fill: ${colors.brand.default};
     transition: fill 0.2s;
   }
 

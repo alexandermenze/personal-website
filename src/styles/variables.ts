@@ -1,20 +1,14 @@
 /* eslint-disable max-len */
 
 export const colors = {
-  brand: '#663399',
-  brandLight: 'rgba(102, 51, 153, 0.3)',
-  brandVeryLight: 'rgba(102, 51, 153, 0.1)',
-  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-  lilac: '#9d7cbf',
-  accent: '#ffb238',
-  success: '#37b635',
-  warning: '#ec1818',
-  ui: {
-    bright: '#e0d6eb',
-    light: '#f5f3f7',
-    whisper: '#fbfafc'
+  brand: {
+    default: '#663399',
+    light: 'rgba(102, 51, 153, 0.3)',
+    veryLight: 'rgba(102, 51, 153, 0.1)'
   },
-  code: '#fcf6f0',
+  backgroundColor: 'rgba(0, 0, 0, 0.05)',
+  accent: '#ffb238',
+  secondary: '#D86130',
   gray: {
     dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
     copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',

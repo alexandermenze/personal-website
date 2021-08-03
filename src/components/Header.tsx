@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   right: 0;
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
-  background-color: ${colors.brand};
+  background-color: ${colors.brand.default};
   color: ${transparentize(0.5, colors.white)};
 `
 

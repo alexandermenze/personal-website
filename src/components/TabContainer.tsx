@@ -37,7 +37,7 @@ const HeaderContainer = styled.div`
 
 const PartialHoverBackground = css`
   :hover {
-    background-color: ${colors.brandVeryLight};
+    background-color: ${colors.brand.veryLight};
   }
 `
 
@@ -46,8 +46,8 @@ const TabTitle = styled.button<{ selected: boolean }>`
   display: inline;
   padding: 8px 5px;
   border: 0;
-  border-bottom: 2px solid ${p => (p.selected ? colors.brand : colors.black)};
-  background-color: ${p => (p.selected ? colors.brandLight : colors.transparent)};
+  border-bottom: 2px solid ${p => (p.selected ? colors.brand.default : colors.black)};
+  background-color: ${p => (p.selected ? colors.brand.light : colors.transparent)};
   cursor: pointer;
 
   ${p => (p.selected ? `` : PartialHoverBackground)}

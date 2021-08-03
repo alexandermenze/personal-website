@@ -24,7 +24,7 @@ const HorizontalLine = styled.div`
   width: 200px;
   margin-left: 50px;
   display: inline;
-  background-color: ${colors.brand};
+  background-color: ${colors.brand.default};
 
   @media (max-width: ${breakpoints.xl}px) {
     display: none;
@@ -40,8 +40,8 @@ const HeadingContainer = styled.div`
 
 const ResumeContentContainer = styled.div`
   padding: 12px;
-  box-shadow: 0 0 12px ${colors.brandLight};
-  background-color: ${colors.brandVeryLight};
+  box-shadow: 0 0 12px ${colors.brand.light};
+  background-color: ${colors.brand.veryLight};
 `
 
 export interface ResumeEntry {

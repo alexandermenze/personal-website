@@ -62,7 +62,7 @@ const HorizontalLine = styled.div`
   height: 2px;
   width: 200px;
   display: inline;
-  background-color: ${colors.brand};
+  background-color: ${colors.brand.default};
 
   @media (max-width: ${breakpoints.xl}px) {
     display: none;

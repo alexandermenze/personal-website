@@ -14,7 +14,7 @@ const StyledMailContact = styled.div`
 `
 
 const StyledMailAdress = styled.a`
-  color: ${colors.brand};
+  color: ${colors.brand.default};
   text-decoration: underline;
   writing-mode: vertical-rl;
   position: relative;

@@ -29,7 +29,7 @@ export default `
   }
 
   a {
-    color: ${colors.brand};
+    color: ${colors.brand.default};
     text-decoration: none;
     transition: color 0.2s ease;
 
@@ -57,7 +57,7 @@ export default `
   table {
     width: 100%;
     margin-bottom: 1rem;
-    border: 1px solid ${colors.ui.light};
+    border: 1px solid ${colors.brand.light};
     font-size: 85%;
     border-collapse: collapse;
   }
@@ -65,7 +65,7 @@ export default `
   td,
   th {
     padding: .25rem .5rem;
-    border: 1px solid ${colors.ui.light};
+    border: 1px solid ${colors.brand.light};
   }
 
   th {
@@ -76,10 +76,10 @@ export default `
     tr {
       &:nth-of-type(odd) {
         td {
-          background-color: ${colors.ui.whisper};
+          background-color: ${colors.secondary};
         }
         tr {
-          background-color: ${colors.ui.whisper};
+          background-color: ${colors.secondary};
         }
       }
     }
@@ -139,13 +139,13 @@ export default `
     position: relative;
     margin: 1.5rem 0;
     border: 0;
-    border-top: 1px solid ${colors.ui.light};
+    border-top: 1px solid ${colors.brand.light};
   }
 
   blockquote {
     margin: .8rem 0;
     padding: .5rem 1rem;
-    border-left: .25rem solid ${colors.ui.light};
+    border-left: .25rem solid ${colors.brand.light};
     color: ${colors.gray.calm};
 
     p {

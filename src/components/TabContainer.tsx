@@ -52,6 +52,7 @@ const TabTitle = styled.button<{ selected: boolean }>`
     height: 1px;
     width: 50%;
     border-bottom: 2px solid ${p => (p.selected ? colors.brand.default : colors.transparent)};
+    transition: border-bottom 0.15s linear;
   }
 
   :hover {

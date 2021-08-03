@@ -41,6 +41,17 @@ const NameHeader = styled.h1`
   animation: 0.5s ease-out 0s 1 ${opacityAnimation};
 `
 
+const HorizontalLine = styled.div`
+  margin-top: 10px;
+  height: 2px;
+  width: 200px;
+  background-color: ${colors.brand.default};
+
+  @media (max-width: ${breakpoints.xl}px) {
+    display: none;
+  }
+`
+
 const ShortDescriptionText = styled.h4`
   position: relative;
   margin-left: auto;
@@ -90,6 +101,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ name, shortDescription, lon
         <StaticImage src="../assets/images/profile_image.jpg" alt="Profile image" width={300} height={300} />
       </ProfileImageContainer>
     </InnerContainer>
+    <HorizontalLine />
   </Container>
 )
 

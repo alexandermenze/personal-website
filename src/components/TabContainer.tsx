@@ -37,8 +37,6 @@ const ContentContainer = styled.div<{ visible: boolean }>`
 
 const HeaderContainer = styled.div<{ onTop: boolean }>`
   display: flex;
-  padding-left: 12px;
-  padding-right: 12px;
   overflow-x: auto;
   overflow-y: hidden;
 
@@ -71,6 +69,14 @@ const TabTitle = styled.button<{ selected: boolean; onTop: boolean }>`
   :hover {
     background-color: ${colors.brand.veryLight};
     border-radius: 0.4rem;
+  }
+
+  &:first-child {
+    margin-left: 12px;
+  }
+
+  &:last-child {
+    margin-right: 12px;
   }
 `
 

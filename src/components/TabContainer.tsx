@@ -138,7 +138,7 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
     this.setState({
       selectedTab: tabs[index]
     })
-    event.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
+    event.currentTarget.scrollIntoView(false)
   }
 
   render() {

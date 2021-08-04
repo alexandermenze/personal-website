@@ -39,7 +39,6 @@ const HeadingContainer = styled.div`
 `
 
 const ResumeContentContainer = styled.div`
-  padding: 12px;
   box-shadow: 0 0 12px ${colors.gray.light};
   background-color: ${colors.white};
   border-radius: 0.4em;

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { css, keyframes } from '@emotion/core'
-import { colors, fonts } from '../styles/variables'
+import { breakpoints, colors, fonts } from '../styles/variables'
 
 const FadeInAnimation = keyframes`
   0%   { opacity: 0; }
@@ -15,6 +15,8 @@ const InstantlyOutAnimation = keyframes`
 
 const Container = styled.div`
   position: relative;
+  padding-top: 12px;
+  padding-bottom: 12px;
 `
 
 const ContentPanel = styled.div`
@@ -22,6 +24,8 @@ const ContentPanel = styled.div`
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
+  margin-left: 12px;
+  margin-right: 12px;
 `
 
 const ContentContainer = styled.div<{ visible: boolean }>`
@@ -31,14 +35,18 @@ const ContentContainer = styled.div<{ visible: boolean }>`
   grid-column-start: 1;
 `
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.div<{ onTop: boolean }>`
   display: flex;
-  margin-bottom: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
   overflow-x: auto;
   overflow-y: hidden;
+
+  margin-bottom: ${p => (p.onTop ? `16px` : `0`)};
+  margin-top: ${p => (p.onTop ? `0` : `16px`)};
 `
 
-const TabTitle = styled.button<{ selected: boolean }>`
+const TabTitle = styled.button<{ selected: boolean; onTop: boolean }>`
   position: relative;
   display: inline;
   padding: 8px 12px;
@@ -51,11 +59,13 @@ const TabTitle = styled.button<{ selected: boolean }>`
     content: '';
     position: absolute;
     left: 25%;
-    bottom: 0;
     height: 1px;
     width: 50%;
     border-bottom: 2px solid ${p => (p.selected ? colors.brand.default : colors.transparent)};
     transition: border-bottom 0.15s linear;
+
+    ${p => (p.onTop ? `bottom: 0` : ``)};
+    ${p => (!p.onTop ? `top: 0` : ``)};
   }
 
   :hover {
@@ -75,6 +85,18 @@ const SubtitleParagraph = styled.p`
   text-align: left;
   font-size: 0.9em;
   font-family: ${fonts.monospace};
+`
+
+const HideIfLessThanMedium = styled.div`
+  @media (max-width: ${breakpoints.md}px) {
+    display: none;
+  }
+`
+
+const ShowIfLessThanMedium = styled.div`
+  @media (min-width: ${breakpoints.md}px) {
+    display: none;
+  }
 `
 
 export interface Tab {
@@ -118,15 +140,17 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
 
     return (
       <Container>
-        <HeaderContainer>
-          {tabs.map((e, i) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <TabTitle onClick={() => this.onTabHeaderClick(i)} selected={e === selectedTab} key={i}>
-              <TitleParagraph>{e.title}</TitleParagraph>
-              <SubtitleParagraph>{e.subtitle}</SubtitleParagraph>
-            </TabTitle>
-          ))}
-        </HeaderContainer>
+        <HideIfLessThanMedium>
+          <HeaderContainer onTop>
+            {tabs.map((e, i) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <TabTitle onClick={() => this.onTabHeaderClick(i)} selected={e === selectedTab} key={i} onTop>
+                <TitleParagraph>{e.title}</TitleParagraph>
+                <SubtitleParagraph>{e.subtitle}</SubtitleParagraph>
+              </TabTitle>
+            ))}
+          </HeaderContainer>
+        </HideIfLessThanMedium>
         <ContentPanel>
           {tabs.map((e, _) => (
             <ContentContainer visible={selectedTab === e} key={e.title}>
@@ -134,6 +158,17 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
             </ContentContainer>
           ))}
         </ContentPanel>
+        <ShowIfLessThanMedium>
+          <HeaderContainer onTop={false}>
+            {tabs.map((e, i) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <TabTitle onClick={() => this.onTabHeaderClick(i)} selected={e === selectedTab} key={i} onTop={false}>
+                <TitleParagraph>{e.title}</TitleParagraph>
+                <SubtitleParagraph>{e.subtitle}</SubtitleParagraph>
+              </TabTitle>
+            ))}
+          </HeaderContainer>
+        </ShowIfLessThanMedium>
       </Container>
     )
   }

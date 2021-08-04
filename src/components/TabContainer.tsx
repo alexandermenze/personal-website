@@ -127,11 +127,12 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
     })
   }
 
-  onTabHeaderClick(index: number) {
+  onTabHeaderClick(index: number, event: React.MouseEvent) {
     const { tabs } = this.props
     this.setState({
       selectedTab: tabs[index]
     })
+    event.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
   }
 
   render() {
@@ -144,7 +145,7 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
           <HeaderContainer onTop>
             {tabs.map((e, i) => (
               // eslint-disable-next-line react/no-array-index-key
-              <TabTitle onClick={() => this.onTabHeaderClick(i)} selected={e === selectedTab} key={i} onTop>
+              <TabTitle onClick={event => this.onTabHeaderClick(i, event)} selected={e === selectedTab} key={i} onTop>
                 <TitleParagraph>{e.title}</TitleParagraph>
                 <SubtitleParagraph>{e.subtitle}</SubtitleParagraph>
               </TabTitle>
@@ -162,7 +163,7 @@ class TabContainer extends React.Component<TabContainerProps, TabContainerState>
           <HeaderContainer onTop={false}>
             {tabs.map((e, i) => (
               // eslint-disable-next-line react/no-array-index-key
-              <TabTitle onClick={() => this.onTabHeaderClick(i)} selected={e === selectedTab} key={i} onTop={false}>
+              <TabTitle onClick={event => this.onTabHeaderClick(i, event)} selected={e === selectedTab} key={i} onTop={false}>
                 <TitleParagraph>{e.title}</TitleParagraph>
                 <SubtitleParagraph>{e.subtitle}</SubtitleParagraph>
               </TabTitle>

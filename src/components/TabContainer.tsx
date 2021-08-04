@@ -32,7 +32,10 @@ const ContentContainer = styled.div<{ visible: boolean }>`
 `
 
 const HeaderContainer = styled.div`
+  display: flex;
   margin-bottom: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
 `
 
 const TabTitle = styled.button<{ selected: boolean }>`

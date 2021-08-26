@@ -2,9 +2,9 @@
 
 export const colors = {
   brand: {
-    default: '#663399',
-    light: 'rgba(102, 51, 153, 0.3)',
-    veryLight: 'rgba(102, 51, 153, 0.1)'
+    default: '#335f99',
+    light: 'rgba(51, 95, 153, 0.3)',
+    veryLight: 'rgba(51, 95, 153, 0.1)'
   },
   backgroundColor: 'rgba(0, 0, 0, 0.05)',
   accent: '#ffb238',

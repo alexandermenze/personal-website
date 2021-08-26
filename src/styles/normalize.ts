@@ -26,7 +26,8 @@ export default `
     overflow-y: scroll;
     font-family: ${fonts.sansSerif};
     color: ${colors.black};
-    background-color: ${colors.backgroundColor};
+    background: rgb(245,252,255);
+    background: linear-gradient(0deg, rgba(245,252,255,0.5018382352941176) 50%, rgba(240,250,255,1) 100%);
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
